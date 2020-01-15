@@ -8,7 +8,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  bool passwordVisible=false;
+  bool passwordVisible=true;
 
   @override
   Widget build(BuildContext context) {
@@ -33,18 +33,18 @@ class _LoginScreenState extends State<LoginScreen> {
                   decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
                       borderSide:
-                          BorderSide(color: const Color(0xFF2FB056), width: 1),
+                          BorderSide(color: baseColor, width: 1),
                     ),
                     filled: true,
                     fillColor: Colors.white,
                     border: const OutlineInputBorder(
                       borderSide: const BorderSide(
-                          color: const Color(0xFF707070), width: 0.2),
+                          color: greyColor, width: 0.2),
                     ),
                     hintText: "Email",
                     prefixIcon: const Icon(
                       Icons.email,
-                      color: const Color(0xFF2FB056),
+                      color: baseColor,
                     ),
                   ),
                 ),
@@ -59,23 +59,23 @@ class _LoginScreenState extends State<LoginScreen> {
                       fillColor: Colors.white,
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                            color: const Color(0xFF2FB056), width: 1),
+                            color: baseColor, width: 1),
                       ),
                       border: const OutlineInputBorder(
                         borderSide: const BorderSide(
-                            color: const Color(0xFF707070), width: 0.2),
+                            color: greyColor, width: 0.2),
                       ),
                       hintText: "Password",
                       prefixIcon: const Icon(
                         Icons.vpn_key,
-                        color: const Color(0xFF2FB056),
+                        color: baseColor,
                       ),
                       suffixIcon: IconButton(
                         icon: Icon(
                           passwordVisible
                               ? Icons.visibility_off
                               : Icons.visibility,
-                          color: const Color(0xFF2FB056),
+                          color: baseColor,
                         ),
                         onPressed: () {
                           setState(() {

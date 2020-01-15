@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:help_me/routes/intro_screen.dart';
 
-var greyColor = Color(0xFF707070);
-var baseColor =const Color(0xFF2FB056);
+const Color greyColor = Color(0xFF707070);
+const Color baseColor = Color(0xFF2FB056);
 
 void main() => runApp(new MaterialApp(
       theme: ThemeData(
