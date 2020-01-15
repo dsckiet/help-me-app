@@ -22,4 +22,7 @@ flutter:
           weight: 600
         - asset: assets/fonts/ProductSansRegular.ttf
           weight: 400
+
+  assets:
+    - assets/images/loginimage.png
   uses-material-design: true
