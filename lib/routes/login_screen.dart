@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:help_me/main.dart';
+import 'package:help_me/routes/home_screen.dart';
 import 'package:help_me/routes/register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -8,7 +9,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  bool passwordVisible=true;
+  bool passwordVisible = true;
 
   @override
   Widget build(BuildContext context) {
@@ -32,14 +33,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   style: TextStyle(color: Colors.black),
                   decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: baseColor, width: 1),
+                      borderSide: BorderSide(color: baseColor, width: 1),
                     ),
                     filled: true,
                     fillColor: Colors.white,
                     border: const OutlineInputBorder(
-                      borderSide: const BorderSide(
-                          color: greyColor, width: 0.2),
+                      borderSide:
+                          const BorderSide(color: greyColor, width: 0.2),
                     ),
                     hintText: "Email",
                     prefixIcon: const Icon(
@@ -58,12 +58,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       filled: true,
                       fillColor: Colors.white,
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: baseColor, width: 1),
+                        borderSide: BorderSide(color: baseColor, width: 1),
                       ),
                       border: const OutlineInputBorder(
-                        borderSide: const BorderSide(
-                            color: greyColor, width: 0.2),
+                        borderSide:
+                            const BorderSide(color: greyColor, width: 0.2),
                       ),
                       hintText: "Password",
                       prefixIcon: const Icon(
@@ -86,13 +85,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   )),
               Container(
-                padding:
-                EdgeInsets.only(top: 20),
+                padding: EdgeInsets.only(top: 20),
                 child: SizedBox(
                   width: double.infinity,
                   child: RaisedButton(
-                    padding:
-                    EdgeInsets.symmetric(vertical: 8, horizontal: 48),
+                    padding: EdgeInsets.symmetric(vertical: 8, horizontal: 48),
                     child: Text(
                       "Log in",
                       style: TextStyle(
@@ -102,13 +99,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     shape: RoundedRectangleBorder(
                         borderRadius: new BorderRadius.circular(8.0)),
-                    onPressed: ()=>{},
+                    onPressed: () => Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => HomeScreen())),
                   ),
                 ),
               ),
               Container(
-                padding:
-                EdgeInsets.only(top: 40.0,),
+                padding: EdgeInsets.only(
+                  top: 40.0,
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[

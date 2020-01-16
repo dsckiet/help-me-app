@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:help_me/main.dart';
+import 'package:help_me/routes/home_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   @override
@@ -181,7 +182,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     color:baseColor,
                     shape: RoundedRectangleBorder(
                         borderRadius: new BorderRadius.circular(8.0)),
-                    onPressed: ()=>{},
+                    onPressed: ()=>Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => HomeScreen())),
                   ),
                 ),
               )

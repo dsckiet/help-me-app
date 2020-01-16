@@ -25,4 +25,5 @@ flutter:
 
   assets:
     - assets/images/loginimage.png
+    - assets/images/location.png
   uses-material-design: true
