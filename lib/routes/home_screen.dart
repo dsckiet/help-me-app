@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:help_me/main.dart';
 import 'package:help_me/routes/first_aid_screen.dart';
+import 'package:help_me/routes/precaution_screen.dart';
 import 'package:help_me/routes/register_screen.dart';
+import 'package:help_me/routes/share_location_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -50,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => RegisterScreen()),
+                                  builder: (context) => FirstAidScreen()),
                             );
                           },
                           child: FittedBox(
@@ -79,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => RegisterScreen()),
+                                  builder: (context) => PrecautionScreen()),
                             );
                           },
                           child: FittedBox(
@@ -107,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => RegisterScreen()),
+                                  builder: (context) => ShareLocationScreen()),
                             );
                           },
                           child: FittedBox(
@@ -136,7 +138,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => FirstAidScreen()),
+                                  builder: (context) => RegisterScreen()),
                             );
                           },
                           child: FittedBox(

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class FirstAidScreen extends StatefulWidget {
+class PrecautionScreen extends StatefulWidget {
   @override
-  _FirstAidScreenState createState() => _FirstAidScreenState();
+  _PrecautionScreenState createState() => _PrecautionScreenState();
 }
 
-class _FirstAidScreenState extends State<FirstAidScreen> {
+class _PrecautionScreenState extends State<PrecautionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +15,7 @@ class _FirstAidScreenState extends State<FirstAidScreen> {
         child: Column(
           children: <Widget>[
             Text(
-              "First Aids",
+              "Precautionary steps",
               style: Theme.of(context).textTheme.headline,
             ),
 //            ListView.builder(
