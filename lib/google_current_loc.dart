@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 
+Position livePosition;
+
 class GoogleCurrentLoc extends StatefulWidget {
   @override
   _GoogleCurrentLocState createState() => _GoogleCurrentLocState();
@@ -10,7 +12,6 @@ class GoogleCurrentLoc extends StatefulWidget {
 
 class _GoogleCurrentLocState extends State<GoogleCurrentLoc> {
   GoogleMapController mapController;
-  Position position;
   Widget _child;
 
   @override
@@ -23,7 +24,10 @@ class _GoogleCurrentLocState extends State<GoogleCurrentLoc> {
     Position res = await Geolocator()
         .getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
     setState(() {
-      position = res;
+      livePosition = res;
+      print(livePosition.latitude.toString());
+      print(livePosition.longitude.toString());
+
       _child = mapWidget();
     });
   }
@@ -48,7 +52,7 @@ class _GoogleCurrentLocState extends State<GoogleCurrentLoc> {
       mapType: MapType.normal,
       markers: _createMarker(),
       initialCameraPosition: CameraPosition(
-        target: LatLng(position.latitude, position.longitude),
+        target: LatLng(livePosition.latitude, livePosition.longitude),
         zoom: 18,
       ),
       onMapCreated: (GoogleMapController controller) {
@@ -61,7 +65,7 @@ class _GoogleCurrentLocState extends State<GoogleCurrentLoc> {
     return <Marker>[
       Marker(
         markerId: MarkerId("current location"),
-        position: LatLng(position.latitude, position.longitude),
+        position: LatLng(livePosition.latitude, livePosition.longitude),
         icon: BitmapDescriptor.defaultMarker,
         infoWindow: InfoWindow(title: "current location"),
       ),
