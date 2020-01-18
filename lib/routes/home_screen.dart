@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:help_me/google_current_loc.dart';
 import 'package:help_me/main.dart';
 import 'package:help_me/routes/first_aid_screen.dart';
 import 'package:help_me/routes/help_screen.dart';
@@ -20,7 +21,9 @@ class _HomeScreenState extends State<HomeScreen> {
         children: <Widget>[
           Align(
             alignment: Alignment.center,
-            child: Text("Google maps"),
+            child: Container(
+              child: GoogleCurrentLoc(),
+            ),
           ),
           Align(
             alignment: Alignment.bottomCenter,
@@ -171,7 +174,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(bottom:90.0,right: 20),
+            padding: const EdgeInsets.only(bottom: 90.0, right: 20),
             child: Align(
               alignment: Alignment.bottomRight,
               child: FloatingActionButton(
