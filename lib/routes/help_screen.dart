@@ -39,7 +39,7 @@ class _HelpScreenState extends State<HelpScreen> {
                     "Edit",
                     style: TextStyle(
                         fontSize: 24.0,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w600,
                         color: Colors.white),
                   ),
                   color: Color(0xFFB9B9B9),
@@ -60,7 +60,7 @@ class _HelpScreenState extends State<HelpScreen> {
                     "Confirm",
                     style: TextStyle(
                       fontSize: 24.0,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                   color: baseColor,

@@ -3,6 +3,7 @@ import 'package:help_me/main.dart';
 import 'package:help_me/routes/first_aid_screen.dart';
 import 'package:help_me/routes/help_screen.dart';
 import 'package:help_me/routes/precaution_screen.dart';
+import 'package:help_me/routes/profile_screen.dart';
 import 'package:help_me/routes/register_screen.dart';
 import 'package:help_me/routes/share_location_screen.dart';
 
@@ -139,7 +140,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => RegisterScreen()),
+                                  builder: (context) => ProfileScreen()),
                             );
                           },
                           child: FittedBox(
