@@ -1,18 +1,22 @@
-name: Dart CI
+name: Flutter CI
 
 on: [push]
 
 jobs:
-  build:
-
+  test:
+    name: Test on ubuntu
     runs-on: ubuntu-latest
-
-    container:
-      image:  google/dart:latest
-
+    
     steps:
-    - uses: actions/checkout@v1
-    - name: Install dependencies
-      run: flutter pub get
-    - name: Run tests
-      run: pub run test
+      - uses: actions/checkout@v1
+      - uses: actions/setup-java@v1
+        with:
+          java-version: '12.x'
+      - uses: subosito/flutter-action@v1
+        with:
+          flutter-version: 'v1.12.13+hotfix.5'
+          channel: 'beta'
+      - working-directory: ./android
+        run: flutter pub get
+      - working-directory: ./android
+        run: flutter build apk
