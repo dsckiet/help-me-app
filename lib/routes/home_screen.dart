@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:help_me/google_current_loc.dart';
 import 'package:help_me/main.dart';
 import 'package:help_me/routes/first_aid_screen.dart';
+<<<<<<< HEAD
+import 'package:help_me/routes/nearby_hcc.dart';
+=======
 import 'package:help_me/routes/help_screen.dart';
+>>>>>>> 3150e5acdc428f597cf9fa2dfc67e7c07cd23f15
 import 'package:help_me/routes/precaution_screen.dart';
 import 'package:help_me/routes/profile_screen.dart';
 import 'package:help_me/routes/register_screen.dart';
@@ -186,7 +190,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: () {
                   Navigator.push(
                     context,
+<<<<<<< HEAD
+                    MaterialPageRoute(
+                      builder: (context) => NearbyHcc(
+                        currentPos: livePosition,
+                      ),
+                    ),
+=======
                     MaterialPageRoute(builder: (context) => HelpScreen()),
+>>>>>>> 3150e5acdc428f597cf9fa2dfc67e7c07cd23f15
                   );
                 },
               ),
