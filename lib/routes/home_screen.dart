@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:help_me/google_current_loc.dart';
 import 'package:help_me/main.dart';
 import 'package:help_me/routes/first_aid_screen.dart';
-import 'package:help_me/routes/help_screen.dart';
+import 'package:help_me/routes/nearby_hcc.dart';
 import 'package:help_me/routes/precaution_screen.dart';
 import 'package:help_me/routes/profile_screen.dart';
-import 'package:help_me/routes/register_screen.dart';
 import 'package:help_me/routes/share_location_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -186,7 +185,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => HelpScreen()),
+                    MaterialPageRoute(
+                      builder: (context) => NearbyHcc(
+                        currentPos: livePosition,
+                      ),
+                    ),
                   );
                 },
               ),
