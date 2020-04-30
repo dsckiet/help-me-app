@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:help_me/main.dart';
-import 'package:help_me/routes/home_screen.dart';
+import 'package:help_me/ui/screens/home_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   @override
