@@ -13,6 +13,8 @@ dependencies:
   geolocator: ^5.1.5
   provider: ^3.0.0
   http: ^0.12.0+2
+  firebase_auth: ^0.16.1
+  cloud_firestore: ^0.13.7
 
 dev_dependencies:
   flutter_test:
