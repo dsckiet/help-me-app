@@ -29,4 +29,26 @@ class FirebaseAuthService{
     }
     return null;
   }
+
+  //signIn with email and password
+  Future<User> signInWithEmail({String email, String password}) async {
+    try {
+      final response = await http.post(api.uri(':signInWithPassword').toString(), body: {
+        "email": "$email",
+        "password": "$password",
+        "returnSecureToken": "true"
+      });
+      if (response.statusCode == 200) {
+        final user = jsonDecode(response.body);
+        return User(
+            email: user['email'],
+            uid: user['localId'],
+            idToken: user['idToken'],
+            expiresIn: user['expiresIn']);
+      }
+    } catch (error) {
+      print(error);
+    }
+    return null;
+  }
 }
