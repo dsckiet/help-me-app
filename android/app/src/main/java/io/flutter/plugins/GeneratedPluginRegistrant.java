@@ -7,6 +7,7 @@ import io.flutter.plugins.firebase.core.FirebaseCorePlugin;
 import com.baseflow.geolocator.GeolocatorPlugin;
 import com.baseflow.googleapiavailability.GoogleApiAvailabilityPlugin;
 import io.flutter.plugins.googlemaps.GoogleMapsPlugin;
+import io.flutter.plugins.googlesignin.GoogleSignInPlugin;
 import com.baseflow.location_permissions.LocationPermissionsPlugin;
 
 /**
@@ -23,6 +24,7 @@ public final class GeneratedPluginRegistrant {
     GeolocatorPlugin.registerWith(registry.registrarFor("com.baseflow.geolocator.GeolocatorPlugin"));
     GoogleApiAvailabilityPlugin.registerWith(registry.registrarFor("com.baseflow.googleapiavailability.GoogleApiAvailabilityPlugin"));
     GoogleMapsPlugin.registerWith(registry.registrarFor("io.flutter.plugins.googlemaps.GoogleMapsPlugin"));
+    GoogleSignInPlugin.registerWith(registry.registrarFor("io.flutter.plugins.googlesignin.GoogleSignInPlugin"));
     LocationPermissionsPlugin.registerWith(registry.registrarFor("com.baseflow.location_permissions.LocationPermissionsPlugin"));
   }
 

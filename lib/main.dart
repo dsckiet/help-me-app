@@ -1,33 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:help_me/ui/screens/intro_screen.dart';
+import 'package:help_me/screens/intro_screen.dart';
+import 'package:help_me/services/firebase_auth.dart';
+import 'package:provider/provider.dart';
 
 const Color greyColor = Color(0xFF707070);
 const Color baseColor = Color(0xFF2FB056);
 
-void main() => runApp(
-      new MaterialApp(
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(
+    StreamProvider.value(
+      value: AuthService().user,
+      child: MaterialApp(
         theme: ThemeData(
             brightness: Brightness.light,
             buttonTheme: ButtonThemeData(
                 buttonColor: baseColor, textTheme: ButtonTextTheme.primary),
             fontFamily: 'Product Sans',
             textTheme: TextTheme(
-                headline: TextStyle(
+                headline5: TextStyle(
                     fontSize: 32,
                     color: baseColor,
                     fontWeight: FontWeight.w600),
-                title: TextStyle(
+                headline6: TextStyle(
                     fontSize: 28,
                     color: greyColor,
                     fontWeight: FontWeight.w600),
-                body1: TextStyle(
+                bodyText2: TextStyle(
                     fontSize: 20,
                     color: greyColor,
                     fontWeight: FontWeight.w600),
-                body2: TextStyle(
+                bodyText1: TextStyle(
                     fontSize: 16,
                     color: greyColor,
                     fontWeight: FontWeight.w600))),
         home: IntroScreen(),
       ),
-    );
+    ),
+  );
+}

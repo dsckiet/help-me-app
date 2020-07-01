@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:help_me/main.dart';
-import 'package:help_me/ui/screens/login_screen.dart';
+import '../wrapper.dart';
 
 class IntroScreen extends StatelessWidget {
   @override
@@ -22,11 +22,10 @@ class IntroScreen extends StatelessWidget {
                 Text(
                   "XYZ\nBE SAFE",
                   textAlign: TextAlign.center,
-                  style:TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 48,
-                    color: greyColor
-                  ),
+                  style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 48,
+                      color: greyColor),
                 ),
                 Container(
                   padding: EdgeInsets.only(top: 36.0, left: 24.0, right: 24.0),
@@ -34,7 +33,7 @@ class IntroScreen extends StatelessWidget {
                     width: double.infinity,
                     child: RaisedButton(
                       padding:
-                      EdgeInsets.symmetric(vertical: 8, horizontal: 48),
+                          EdgeInsets.symmetric(vertical: 8, horizontal: 48),
                       child: Text(
                         "Continue",
                         style: TextStyle(
@@ -45,10 +44,8 @@ class IntroScreen extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                           borderRadius: new BorderRadius.circular(8.0)),
                       onPressed: () {
-                        Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => LoginScreen()));
+                        Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: (context) => Wrapper()));
                       },
                     ),
                   ),
