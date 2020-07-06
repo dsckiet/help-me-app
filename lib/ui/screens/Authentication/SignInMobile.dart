@@ -1,9 +1,7 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:help_me/shared/Constants.dart';
-
+import 'package:help_me/ui/shared/Constants.dart';
 import 'OTPScreen.dart';
 
 class SignInMobile extends StatefulWidget {
@@ -79,7 +77,7 @@ class _SignInMobileState extends State<SignInMobile> {
                     LongButton(
                       color: kBlueColor,
                       title: 'Enter Mobile',
-                      onPressed: () {
+                      onPressed: (){   // TODO : LOGIN USING PHONE NUMBER
                         if (_formKey.currentState.validate())
                           Navigator.pushReplacement(context,
                               MaterialPageRoute(builder: (context) {
@@ -100,10 +98,7 @@ class _SignInMobileState extends State<SignInMobile> {
           Positioned(
             top: 60,
             left: 30,
-            child: Image.asset(
-              'assets/images/Hand.png',
-              height: 100,
-            ),
+            child: kGetAppIcon(),
           ),
         ],
       ),

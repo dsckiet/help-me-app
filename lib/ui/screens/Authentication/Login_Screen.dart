@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:help_me/main.dart';
 import 'package:help_me/services/firebase_auth.dart';
-import 'package:help_me/shared/loading.dart';
+import 'package:help_me/ui/shared/loading.dart';
 
 class LoginScreen extends StatefulWidget {
   final Function toggleShowSignIn;

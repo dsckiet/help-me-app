@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:help_me/main.dart';
 import 'package:help_me/services/firebase_auth.dart';
+import 'package:help_me/ui/screens/Authentication/IntroScreen.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override
@@ -74,9 +75,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   color: baseColor,
                   shape: RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(8.0)),
-                  onPressed: () async {
-                    await _auth.signOut();
-                    Navigator.pop(context);
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return IntroScreen();
+                    }));
                   },
                 ),
               ),

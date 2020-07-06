@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 Color kRedColor = Color(0xFFDB4437);
@@ -7,7 +8,7 @@ Color kWhiteColor = Color(0xFFFFFFFF);
 
 Widget kGetAppIcon({double size = 100}) {
   return Image.asset(
-    'assets/images/Hand.png',
+    'assets/images/Hand.png', // TODO : Add SVG File
     height: size,
   );
 }
@@ -46,6 +47,7 @@ class BasePage extends StatelessWidget {
             ),
             TextSpan(
                 text: "\t\t\t\t\tPrivacy Policy",
+                recognizer: TapGestureRecognizer()..onTap=(){}, //TODO : Link to Privacy Policy
                 style: TextStyle(
                     fontSize: 11,
                     color: Colors.black,
@@ -58,6 +60,7 @@ class BasePage extends StatelessWidget {
                     fontWeight: FontWeight.w300)),
             TextSpan(
                 text: "Terms of Use",
+                recognizer: TapGestureRecognizer()..onTap=(){}, //TODO : Link to Terms of Use
                 style: TextStyle(
                     fontSize: 11,
                     color: Colors.black,

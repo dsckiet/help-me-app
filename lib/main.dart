@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:help_me/services/firebase_auth.dart';
-import 'package:help_me/ui/screens/Authentication/IntroScreen.dart';
+import 'package:help_me/wrapper.dart';
 import 'package:provider/provider.dart';
 
 const Color greyColor = Color(0xFF707070);
@@ -34,7 +34,7 @@ void main() {
                     fontSize: 16,
                     color: greyColor,
                     fontWeight: FontWeight.w600))),
-        home: IntroScreen(),
+        home: Wrapper(),
       ),
     ),
   );

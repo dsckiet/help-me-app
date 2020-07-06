@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:help_me/shared/Constants.dart';
 import 'package:help_me/ui/screens/Authentication/SignInMobile.dart';
+import 'package:help_me/ui/screens/HomeScreens/home_screen.dart';
+import 'package:help_me/ui/shared/Constants.dart';
 
 class IntroScreen extends StatefulWidget {
   @override
@@ -42,9 +43,10 @@ class _IntroScreenState extends State<IntroScreen> {
                     color: kRedColor,
                     title: 'Google',
                     onPressed: () {
+                      // TODO : ADD GOOGLE LOGIN
                       Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (context) {
-                        return SignInMobile();
+                        return HomeScreen();
                       }));
                     },
                   ),
@@ -73,10 +75,7 @@ class _IntroScreenState extends State<IntroScreen> {
           Positioned(
             top: 60,
             left: 30,
-            child: Image.asset(
-              'assets/images/Hand.png',
-              height: 100,
-            ),
+            child: kGetAppIcon(),
           ),
         ],
       ),

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:help_me/core/google_current_loc.dart';
 import 'package:help_me/main.dart';
-import 'package:help_me/ui/screens/first_aid_screen.dart';
-import 'package:help_me/ui/screens/nearby_hcc.dart';
-import 'package:help_me/ui/screens/precaution_screen.dart';
-import 'package:help_me/ui/screens/profile_screen.dart';
-import 'package:help_me/ui/screens/share_location_screen.dart';
+
+import 'first_aid_screen.dart';
+import 'nearby_hcc.dart';
+import 'precaution_screen.dart';
+import 'profile_screen.dart';
+import 'share_location_screen.dart';
+
 
 class HomeScreen extends StatefulWidget {
   @override

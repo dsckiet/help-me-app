@@ -1,8 +1,8 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:help_me/shared/Constants.dart';
-import 'package:help_me/ui/screens/Authentication/IntroScreen.dart';
+import 'package:help_me/ui/screens/HomeScreens/home_screen.dart';
+import 'package:help_me/ui/shared/Constants.dart';
+
 
 class OTPScreen extends StatefulWidget {
   final String number;
@@ -86,19 +86,22 @@ class _OTPScreenState extends State<OTPScreen> {
                     LongButton(
                       color: kBlueColor,
                       title: 'Verify and Continue',
-                      onPressed: () {
+                      onPressed: () { // TODO : VERIFY OTP
                         if (_formKey.currentState.validate())
                           Navigator.pushReplacement(context,
                               MaterialPageRoute(builder: (context) {
-                            return IntroScreen();
+                            return HomeScreen();
                           }));
                       },
                     ),
                     SizedBox(
                       height: 10,
                     ),
-                    Text('Resend OTP',
-                        style: TextStyle(color: Colors.black, fontSize: 12)),
+                    GestureDetector(
+                          onTap: (){},//TODO : RESEND OTP
+                          child: Text('Resend OTP',
+                          style: TextStyle(color: Colors.black, fontSize: 12)),
+                    ),
                   ],
                 ),
               ),
