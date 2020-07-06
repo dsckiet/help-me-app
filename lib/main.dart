@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:help_me/screens/intro_screen.dart';
 import 'package:help_me/services/firebase_auth.dart';
+import 'package:help_me/ui/screens/Authentication/IntroScreen.dart';
 import 'package:provider/provider.dart';
 
 const Color greyColor = Color(0xFF707070);
@@ -16,7 +16,7 @@ void main() {
             brightness: Brightness.light,
             buttonTheme: ButtonThemeData(
                 buttonColor: baseColor, textTheme: ButtonTextTheme.primary),
-            fontFamily: 'Product Sans',
+            fontFamily: 'MontSerrat',
             textTheme: TextTheme(
                 headline5: TextStyle(
                     fontSize: 32,

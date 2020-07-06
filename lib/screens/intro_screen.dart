@@ -32,13 +32,15 @@ class IntroScreen extends StatelessWidget {
                   child: SizedBox(
                     width: double.infinity,
                     child: RaisedButton(
+                      color: Color(0xFFDB4437),
                       padding:
                           EdgeInsets.symmetric(vertical: 8, horizontal: 48),
                       child: Text(
-                        "Continue",
+                        "Google",
                         style: TextStyle(
                           fontSize: 24.0,
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w700,
+                          fontFamily: 'Monteserrat',
                         ),
                       ),
                       shape: RoundedRectangleBorder(
