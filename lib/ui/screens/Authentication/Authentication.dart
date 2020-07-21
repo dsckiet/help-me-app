@@ -16,10 +16,10 @@ class _AuthenticationState extends State<Authentication> {
         showSignIn = !showSignIn;
       });
     }
-
-    if (showSignIn)
+//Ye comment farzi hai
+    //if (showSignIn)
       return LoginScreen(toggleShowSignIn);
-    else
-      return RegisterScreen(toggleShowSignIn);
+    //else
+      //return RegisterScreen(toggleShowSignIn);
   }
 }

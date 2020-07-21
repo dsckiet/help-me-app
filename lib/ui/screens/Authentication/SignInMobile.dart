@@ -1,7 +1,9 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:help_me/ui/shared/BaseAuthPage.dart';
 import 'package:help_me/ui/shared/Constants.dart';
+import 'package:help_me/ui/shared/LongButton.dart';
 import 'OTPScreen.dart';
 
 class SignInMobile extends StatefulWidget {
@@ -14,93 +16,89 @@ class _SignInMobileState extends State<SignInMobile> {
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    return BasePage(
-      child: Stack(
-        children: <Widget>[
-          Form(
-            key: _formKey,
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              child: Padding(
-                padding: EdgeInsets.fromLTRB(28, 175, 28, 80),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    Text(
-                      'Hey, There!\nWelcome to Helpme',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 22,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 40,
-                    ),
-                    Text('Enter You Mobile Number ',
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.black,
-                          fontWeight: FontWeight.normal,
-                        )),
-                    SizedBox(height: 12),
-                    TextFormField(
-                      validator: (value) =>
-                          value.length < 10 ? 'Invalid Phone Number' : null,
-                      keyboardType: TextInputType.number,
-                      onChanged: (value) {
-                        setState(() {
-                          number = value;
-                        });
-                      },
-                      decoration: InputDecoration(
-                          isDense: true,
-                          contentPadding: EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 10),
-                          hintText: '              00000-00000',
-                          hintStyle: TextStyle(fontWeight: FontWeight.bold),
-                          filled: true,
-                          fillColor: Colors.white,
-                          focusedBorder: OutlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Colors.black, width: 1),
-                          ),
-                          border: OutlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Colors.black, width: 1),
-                          )),
-                    ),
-                    SizedBox(
-                      height: 14,
-                    ),
-                    LongButton(
-                      color: kBlueColor,
-                      title: 'Enter Mobile',
-                      onPressed: (){   // TODO : LOGIN USING PHONE NUMBER
-                        if (_formKey.currentState.validate())
-                          Navigator.pushReplacement(context,
-                              MaterialPageRoute(builder: (context) {
-                            return OTPScreen(number: number);
-                          }));
-                      },
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text('Back',
-                        style: TextStyle(color: Colors.black, fontSize: 12)),
-                  ],
-                ),
+    final size = MediaQuery.of(context).size;
+    return BaseAuthPage(
+      child: Form(
+        key: _formKey,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            SizedBox(
+              height: size.height / 7,
+            ),
+            Container(
+              alignment: Alignment.centerLeft,
+              child: kGetAppIcon(size: size.height / 7),
+            ),
+            SizedBox(
+              height: size.height / 30,
+            ),
+            Text(
+              'Hey, There!\nWelcome to Helpme',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 22,
               ),
             ),
-          ),
-          Positioned(
-            top: 60,
-            left: 30,
-            child: kGetAppIcon(),
-          ),
-        ],
+            SizedBox(
+              height: size.height / 15,
+            ),
+            Text(
+              'Enter Your Mobile Number ',
+              style: TextStyle(
+                  fontSize: 12,
+                  color: Colors.black,
+                  fontWeight: FontWeight.normal),
+            ),
+            SizedBox(
+              height: size.height / 60,
+            ),
+            TextFormField(
+              textAlign: TextAlign.center,
+              validator: (value) =>
+                  value.length < 10 ? 'Invalid Phone Number' : null,
+              keyboardType: TextInputType.number,
+              onChanged: (value) {
+                setState(() {
+                  number = value;
+                });
+              },
+              decoration: InputDecoration(
+                hintText: '00000-00000',
+              ),
+            ),
+            SizedBox(
+              height: size.height / 30,
+            ),
+            LongButton(
+              color: kBlueColor,
+              title: 'Continue',
+              onPressed: () {
+                if (_formKey.currentState.validate())
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return OTPScreen(
+                          number: '56',
+                        );
+                      },
+                    ),
+                  );
+              },
+            ),
+            SizedBox(
+              height: size.height / 60,
+            ),
+            GestureDetector(
+                onTap: () => Navigator.pop(context),
+                child: Text('Back',
+                    style: TextStyle(color: Colors.black, fontSize: 12))),
+            SizedBox(
+              height: size.height / 5 - 24,
+            ),
+          ],
+        ),
       ),
     );
   }

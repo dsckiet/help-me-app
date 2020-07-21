@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:help_me/core/google_current_loc.dart';
 import 'package:help_me/main.dart';
+import 'package:help_me/ui/shared/Constants.dart';
 
 import 'first_aid_screen.dart';
 import 'nearby_hcc.dart';
@@ -46,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     bottomRight: Radius.circular(8.0),
                   ),
                   child: Container(
-                    color: baseColor,
+                    color: kGreenColor,
                     padding: EdgeInsets.all(8),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:help_me/main.dart';
+import 'package:help_me/ui/shared/Constants.dart';
 import 'home_screen.dart';
 
 class HelpScreen extends StatefulWidget {
@@ -63,7 +62,7 @@ class _HelpScreenState extends State<HelpScreen> {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  color: baseColor,
+                  color: kGreenColor,
                   shape: RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(8.0)),
                   onPressed: () => Navigator.pushReplacement(context,
