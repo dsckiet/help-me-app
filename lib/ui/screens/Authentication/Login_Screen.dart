@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:help_me/main.dart';
 import 'package:help_me/services/firebase_auth.dart';
+import 'package:help_me/ui/shared/Constants.dart';
 import 'package:help_me/ui/shared/loading.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -47,18 +47,18 @@ class _LoginScreenState extends State<LoginScreen> {
                           decoration: InputDecoration(
                             focusedBorder: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(color: baseColor, width: 1),
+                                  BorderSide(color: kGreenColor, width: 1),
                             ),
                             filled: true,
                             fillColor: Colors.white,
                             border: const OutlineInputBorder(
                               borderSide: const BorderSide(
-                                  color: greyColor, width: 0.2),
+                                  color: kGreyColor, width: 0.2),
                             ),
                             hintText: "Email",
                             prefixIcon: const Icon(
                               Icons.email,
-                              color: baseColor,
+                              color: kGreenColor,
                             ),
                           ),
                           onChanged: (value) {
@@ -81,23 +81,23 @@ class _LoginScreenState extends State<LoginScreen> {
                               fillColor: Colors.white,
                               focusedBorder: OutlineInputBorder(
                                 borderSide:
-                                    BorderSide(color: baseColor, width: 1),
+                                    BorderSide(color: kGreenColor, width: 1),
                               ),
                               border: const OutlineInputBorder(
                                 borderSide: const BorderSide(
-                                    color: greyColor, width: 0.2),
+                                    color: kGreyColor, width: 0.2),
                               ),
                               hintText: "Password",
                               prefixIcon: const Icon(
                                 Icons.vpn_key,
-                                color: baseColor,
+                                color: kGreenColor,
                               ),
                               suffixIcon: IconButton(
                                 icon: Icon(
                                   passwordVisible
                                       ? Icons.visibility_off
                                       : Icons.visibility,
-                                  color: baseColor,
+                                  color: kGreenColor,
                                 ),
                                 onPressed: () {
                                   setState(() {
@@ -169,7 +169,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 style: TextStyle(
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.w600,
-                                  color: baseColor,
+                                  color: kGreenColor,
                                 ),
                               ),
                             )

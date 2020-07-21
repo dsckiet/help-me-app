@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:help_me/main.dart';
+import 'package:help_me/ui/shared/Constants.dart';
+
 
 class ShareLocationScreen extends StatefulWidget {
   @override
@@ -51,7 +52,7 @@ class _ShareLocationScreenState extends State<ShareLocationScreen> {
                           setState(() {
                             switchValue = newSwitchValue;
                             if (switchValue) {
-                              cardColor = baseColor;
+                              cardColor = kGreenColor;
                               _switchText="Turn off";
                             } else {
                               cardColor = Color(0xFFDB4437);
@@ -62,7 +63,7 @@ class _ShareLocationScreenState extends State<ShareLocationScreen> {
                         activeColor: Color(0xFFDB4437),
                         activeTrackColor: Colors.white,
                         inactiveTrackColor: Colors.white,
-                        inactiveThumbColor: baseColor,
+                        inactiveThumbColor: kGreenColor,
                       )
                     ],
                   ),

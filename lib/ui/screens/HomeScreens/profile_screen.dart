@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:help_me/main.dart';
 import 'package:help_me/services/firebase_auth.dart';
 import 'package:help_me/ui/screens/Authentication/IntroScreen.dart';
+import 'package:help_me/ui/shared/Constants.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override
@@ -24,7 +25,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Container(
               padding: EdgeInsets.symmetric(vertical: 32.0),
               child: CircleAvatar(
-                backgroundColor: baseColor,
+                backgroundColor: kGreenColor,
                 radius: 40.0,
                 child: Text(
                   'S',
@@ -72,7 +73,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  color: baseColor,
+                  color: kGreenColor,
                   shape: RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(8.0)),
                   onPressed: () {
