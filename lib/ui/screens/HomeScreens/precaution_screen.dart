@@ -16,7 +16,7 @@ class _PrecautionScreenState extends State<PrecautionScreen> {
           children: <Widget>[
             Text(
               "Precautionary steps",
-              style: Theme.of(context).textTheme.headline,
+              style: Theme.of(context).textTheme.headline5,
             ),
 //            ListView.builder(
 //                itemCount: 1,

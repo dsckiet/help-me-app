@@ -20,7 +20,7 @@ class _NearbyHccState extends State<NearbyHcc> {
             Expanded(
               child: Text(
                 "Nearby HealthCare Centres",
-                style: Theme.of(context).textTheme.headline,
+                style: Theme.of(context).textTheme.headline5,
                 textAlign: TextAlign.center,
               ),
             ),

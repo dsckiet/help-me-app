@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:help_me/widgets/firstaid.dart';
 
 class FirstAidScreen extends StatefulWidget {
   @override
@@ -16,16 +17,19 @@ class _FirstAidScreenState extends State<FirstAidScreen> {
           children: <Widget>[
             Text(
               "First Aids",
-              style: Theme.of(context).textTheme.headline,
+              style: Theme.of(context).textTheme.headline5,
             ),
-//            ListView.builder(
-//                itemCount: 1,
-//                itemBuilder: (BuildContext context,int index){
-//                  return Card(
-//                    child: Text("haath toot gaya khoon nikal raha he"),
-//                  );
-//            }
-//            )
+            Padding(
+              padding: EdgeInsets.only(top: 16),
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemBuilder: (context, int i) {
+                  return firstAidList[i];
+                },
+                itemCount: firstAidList.length,
+              ),
+            )
           ],
         ),
       ),

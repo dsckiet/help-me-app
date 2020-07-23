@@ -19,13 +19,13 @@ class _HelpScreenState extends State<HelpScreen> {
           children: <Widget>[
             Text(
               "Need Help",
-              style: Theme.of(context).textTheme.headline,
+              style: Theme.of(context).textTheme.headline5,
             ),
             Padding(
               padding: EdgeInsets.only(top: 32),
               child: Text(
                 "Hello guys,I Shubham Singh is in dangerplease help me if you canI am at 221b baker street",
-                style: Theme.of(context).textTheme.body1,
+                style: Theme.of(context).textTheme.bodyText1,
                 textAlign: TextAlign.center,
               ),
             ),
@@ -75,7 +75,7 @@ class _HelpScreenState extends State<HelpScreen> {
               padding: EdgeInsets.only(top: 16),
               alignment: Alignment.topLeft,
               child: Text("Contact list",
-                  style: Theme.of(context).textTheme.title),
+                  style: Theme.of(context).textTheme.headline6),
             ),
 //            ListView(
 ////                itemCount: 1,
