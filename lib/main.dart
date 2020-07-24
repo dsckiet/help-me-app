@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:help_me/Models/FirstAidDataModel.dart';
 import 'package:help_me/services/firebase_auth.dart';
+import 'package:help_me/services/firstAidService.dart';
 import 'package:help_me/wrapper.dart';
 import 'package:provider/provider.dart';
 
@@ -9,8 +11,13 @@ const Color baseColor = Color(0xFF2FB056);
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
-    StreamProvider.value(
-      value: AuthService().user,
+    MultiProvider(
+      providers: [
+        StreamProvider.value(value: AuthService().user),
+        Provider<FirstAidData>(
+          create: (context) => FirstAidData(),
+        ),
+      ],
       child: MaterialApp(
         theme: ThemeData(
             brightness: Brightness.light,

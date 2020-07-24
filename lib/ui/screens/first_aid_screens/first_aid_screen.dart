@@ -22,6 +22,7 @@ class _FirstAidScreenState extends State<FirstAidScreen> {
             Padding(
               padding: EdgeInsets.only(top: 16),
             ),
+            //list of first aid topic cards
             Expanded(
               child: ListView.builder(
                 itemBuilder: (context, int i) {
