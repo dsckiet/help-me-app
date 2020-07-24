@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:help_me/Models/FirstAidDataModel.dart';
 import 'package:help_me/services/firebase_auth.dart';
 import 'package:help_me/services/firstAidService.dart';
 import 'package:help_me/wrapper.dart';
@@ -19,6 +18,8 @@ void main() {
         ),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        //TODO: refactor code for theme
         theme: ThemeData(
             brightness: Brightness.light,
             buttonTheme: ButtonThemeData(

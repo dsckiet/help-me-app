@@ -9,24 +9,24 @@ class FirstAidContent extends StatelessWidget {
     final content = Provider.of<FirstAidContentModel>(context);
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        leading: Container(
+          height: 0,
+          width: 0,
+        ),
+        backgroundColor: Colors.white,
+        title: Text(
+          content.data['woundType'],
+          style: Theme.of(context).textTheme.headline5.copyWith(fontSize: 22),
+        ),
+        centerTitle: true,
+        elevation: 2,
+      ),
       body: Container(
-        padding: EdgeInsets.only(top: 40.0),
+        padding: EdgeInsets.only(top: 20.0),
         alignment: Alignment.center,
         child: Column(
           children: <Widget>[
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: size.width * 0.032),
-              child: Text(
-                content.data['woundType'],
-                style: Theme.of(context)
-                    .textTheme
-                    .headline5
-                    .copyWith(fontSize: 25),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 16),
-            ),
             Expanded(
               child: ListView(
                 children: <Widget>[
