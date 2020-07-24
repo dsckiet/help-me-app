@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:help_me/Models/FirstAidDataModel.dart';
 import 'package:help_me/core/google_current_loc.dart';
-import 'package:help_me/main.dart';
+import 'package:help_me/services/firstAidService.dart';
 import 'package:help_me/ui/shared/Constants.dart';
+import 'package:provider/provider.dart';
 
-import 'first_aid_screen.dart';
+import '../first_aid_screens/first_aid_screen.dart';
 import 'nearby_hcc.dart';
 import 'precaution_screen.dart';
 import 'profile_screen.dart';
 import 'share_location_screen.dart';
-
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -18,6 +19,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    final firstAidData = Provider.of<FirstAidData>(context);
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -55,12 +57,22 @@ class _HomeScreenState extends State<HomeScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget>[
                         InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => FirstAidScreen()),
-                            );
+                          onTap: () async {
+                            //get first aid data from the api and store in data variabe.
+                            final FirsAidDataRepository data =
+                                await firstAidData.getFirstAidData();
+                            if (data.firstAidData != null) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
+                                  //pass the data list to firstaid screen
+                                  return Provider<FirsAidDataRepository>.value(
+                                    value: data,
+                                    child: FirstAidScreen(),
+                                  );
+                                }),
+                              );
+                            }
                           },
                           child: FittedBox(
                             fit: BoxFit.fitHeight,
