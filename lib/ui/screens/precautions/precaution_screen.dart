@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:help_me/widgets/firstaid.dart';
+import 'package:help_me/models/precautions_data_model.dart';
+import 'package:help_me/ui/screens/precautions/precaution_content_card.dart';
+import 'package:provider/provider.dart';
 
-class FirstAidScreen extends StatefulWidget {
+class PrecautionScreen extends StatefulWidget {
   @override
-  _FirstAidScreenState createState() => _FirstAidScreenState();
+  _PrecautionScreenState createState() => _PrecautionScreenState();
 }
 
-class _FirstAidScreenState extends State<FirstAidScreen> {
+class _PrecautionScreenState extends State<PrecautionScreen> {
   @override
   Widget build(BuildContext context) {
+    final precautionsData =
+        Provider.of<PrecautionsDataRepository>(context).precautionsData;
     return Scaffold(
       body: Container(
         padding: EdgeInsets.only(top: 40.0),
@@ -16,7 +20,7 @@ class _FirstAidScreenState extends State<FirstAidScreen> {
         child: Column(
           children: <Widget>[
             Text(
-              "First Aids",
+              "Precautions",
               style: Theme.of(context).textTheme.headline5,
             ),
             Padding(
@@ -26,9 +30,11 @@ class _FirstAidScreenState extends State<FirstAidScreen> {
             Expanded(
               child: ListView.builder(
                 itemBuilder: (context, int i) {
-                  return firstAidList[i];
+                  return PrecautionsContentCard(
+                    title: precautionsData[i]['title'],
+                  );
                 },
-                itemCount: firstAidList.length,
+                itemCount: precautionsData.length,
               ),
             )
           ],

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:help_me/Models/first_aid_content_model.dart';
+import 'package:help_me/models/precautions_content_model.dart';
 import 'package:provider/provider.dart';
 
-//display the appropriate data after clicking on cards on the first aid screen
-class FirstAidContent extends StatelessWidget {
+class PrecautionsContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final content = Provider.of<FirstAidContentModel>(context);
+    final content = Provider.of<PrecautionsContentModel>(context);
     final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -16,7 +15,7 @@ class FirstAidContent extends StatelessWidget {
         ),
         backgroundColor: Colors.white,
         title: Text(
-          content.data['woundType'],
+          content.data['title'],
           style: Theme.of(context).textTheme.headline5.copyWith(fontSize: 22),
         ),
         centerTitle: true,
@@ -35,7 +34,10 @@ class FirstAidContent extends StatelessWidget {
                         left: size.width * 0.08,
                         right: size.width * 0.08,
                         bottom: 20),
-                    child: Text(content.data['treatment'][0]),
+                    child: Text('Before : \n' +
+                        content.data['before'] +
+                        '\nAfter : \n' +
+                        content.data['after']),
                   ),
                 ],
               ),
