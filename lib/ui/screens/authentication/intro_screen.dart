@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:help_me/ui/screens/Authentication/SignInMobile.dart';
-import 'package:help_me/ui/screens/HomeScreens/home_screen.dart';
-import 'package:help_me/ui/shared/BaseAuthPage.dart';
-import 'package:help_me/ui/shared/Constants.dart';
-import 'package:help_me/ui/shared/LongButton.dart';
+import 'package:help_me/ui/screens/authentication/sign_in_mobile.dart';
+import 'package:help_me/ui/screens/home_screens/home_screen.dart';
+import 'package:help_me/ui/shared/base_auth_page.dart';
+import 'package:help_me/ui/shared/constants.dart';
+import 'package:help_me/ui/shared/long_button.dart';
 
 class IntroScreen extends StatefulWidget {
   @override

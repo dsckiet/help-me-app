@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 
-import 'Constants.dart';
+import 'constants.dart';
 import 'package:flutter/material.dart';
 
 class BaseAuthPage extends StatelessWidget {

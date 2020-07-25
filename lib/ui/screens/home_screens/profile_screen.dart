@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:help_me/main.dart';
 import 'package:help_me/services/firebase_auth.dart';
-import 'package:help_me/ui/screens/Authentication/IntroScreen.dart';
-import 'package:help_me/ui/shared/Constants.dart';
+import 'package:help_me/ui/screens/authentication/intro_screen.dart';
+import 'package:help_me/ui/shared/constants.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override

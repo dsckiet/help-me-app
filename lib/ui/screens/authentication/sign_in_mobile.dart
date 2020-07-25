@@ -1,10 +1,10 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:help_me/ui/shared/BaseAuthPage.dart';
-import 'package:help_me/ui/shared/Constants.dart';
-import 'package:help_me/ui/shared/LongButton.dart';
-import 'OTPScreen.dart';
+import 'package:help_me/ui/shared/base_auth_page.dart';
+import 'package:help_me/ui/shared/constants.dart';
+import 'package:help_me/ui/shared/long_button.dart';
+import 'otp_screen.dart';
 
 class SignInMobile extends StatefulWidget {
   @override
