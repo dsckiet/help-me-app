@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:help_me/Models/first_aid_data_model.dart';
 import 'package:help_me/core/google_current_loc.dart';
-import 'package:help_me/models/first_aid_data_model.dart';
 import 'package:help_me/services/network_loader.dart';
 import 'package:help_me/ui/screens/First_Aid/First_Aid_Screen.dart';
 import 'package:help_me/ui/shared/constants.dart';
