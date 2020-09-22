@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:help_me/core/google_current_loc.dart';
-import 'package:help_me/models/first_aid_data_model.dart';
-import 'package:help_me/services/network_loader.dart';
-import 'package:help_me/ui/screens/First_Aid/First_Aid_Screen.dart';
+import 'package:help_me/ui/screens/first_aid/first_aid_screen.dart';
+import 'package:help_me/ui/screens/precautions/precaution_screen.dart';
 import 'package:help_me/ui/shared/constants.dart';
-import 'package:provider/provider.dart';
 import 'nearby_hcc.dart';
-import '../Precautions/Precaution_Screen.dart';
 import 'profile_screen.dart';
 import 'share_location_screen.dart';
 
@@ -18,7 +15,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    final networkLoader = Provider.of<NetworkLoader>(context);
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -57,21 +53,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: <Widget>[
                         InkWell(
                           onTap: () async {
-                            //get first aid data from the api and store in data variabe.
-                            final FirstAidDataRepository data =
-                                await networkLoader.getFirstAidData();
-                            if (data.firstAidData != null) {
-                              Navigator.push(
+                            //navigate to first aid screen
+                            Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) {
-                                  //pass the data list to firstaid screen
-                                  return Provider<FirstAidDataRepository>.value(
-                                    value: data,
-                                    child: FirstAidScreen(),
-                                  );
-                                }),
-                              );
-                            }
+                                MaterialPageRoute(
+                                  builder: (context) => FirstAidScreen(),
+                                ));
                           },
                           child: FittedBox(
                             fit: BoxFit.fitHeight,
@@ -96,19 +83,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         InkWell(
                           onTap: () async {
-                            final data =
-                                await networkLoader.getPrecautionsData();
-                            if (data.precautionsData != null) {
-                              Navigator.push(
+                            //navigate to precautions screen
+                            Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => Provider.value(
-                                    value: data,
-                                    child: PrecautionScreen(),
-                                  ),
-                                ),
-                              );
-                            }
+                                  builder: (context) => PrecautionScreen(),
+                                ));
                           },
                           child: FittedBox(
                             fit: BoxFit.fitHeight,
