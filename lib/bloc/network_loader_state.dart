@@ -16,3 +16,9 @@ class NetworkLoaderLoaded extends NetworkLoaderState {
   final FirstAidDataRepository firstAid;
   NetworkLoaderLoaded(this.precautions, this.firstAid);
 }
+
+class NetworkLoaderError extends NetworkLoaderState {
+  final String message;
+
+  NetworkLoaderError(this.message);
+}

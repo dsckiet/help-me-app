@@ -18,16 +18,23 @@ class NetworkLoaderBloc extends Bloc<NetworkLoaderEvent, NetworkLoaderState> {
   Stream<NetworkLoaderState> mapEventToState(
     NetworkLoaderEvent event,
   ) async* {
+    yield NetworkLoaderInitial();
     if (event is GetPrecautions) {
-      yield NetworkLoaderInitial();
-      final PrecautionsDataRepository precautions =
-          await api.getPrecautionsData();
-      yield NetworkLoaderLoaded(precautions, null);
+      try {
+        final PrecautionsDataRepository precautions =
+            await api.getPrecautionsData();
+        yield NetworkLoaderLoaded(precautions, null);
+      } catch (error) {
+        yield NetworkLoaderError(error.toString());
+      }
     }
     if (event is GetFirstAid) {
-      yield NetworkLoaderInitial();
-      final FirstAidDataRepository firstAid = await api.getFirstAidData();
-      yield NetworkLoaderLoaded(null, firstAid);
+      try {
+        final FirstAidDataRepository firstAid = await api.getFirstAidData();
+        yield NetworkLoaderLoaded(null, firstAid);
+      } catch (error) {
+        yield NetworkLoaderError(error.toString());
+      }
     }
   }
 }
