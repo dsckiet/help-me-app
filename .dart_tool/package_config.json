@@ -453,7 +453,7 @@
     },
     {
       "name": "path_drawing",
-      "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/path_drawing-0.4.1",
+      "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/path_drawing-0.4.1+1",
       "packageUri": "lib/",
       "languageVersion": "1.19"
     },
@@ -632,7 +632,7 @@
       "languageVersion": "2.8"
     }
   ],
-  "generated": "2020-10-16T09:10:08.849837Z",
+  "generated": "2020-10-16T09:53:26.667337Z",
   "generator": "pub",
   "generatorVersion": "2.9.0"
 }
