@@ -26,16 +26,10 @@
       "languageVersion": "2.2"
     },
     {
-      "name": "auto_route",
-      "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/auto_route-0.2.2",
+      "name": "bloc",
+      "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/bloc-4.0.0",
       "packageUri": "lib/",
-      "languageVersion": "2.5"
-    },
-    {
-      "name": "auto_route_generator",
-      "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/auto_route_generator-0.2.2",
-      "packageUri": "lib/",
-      "languageVersion": "2.5"
+      "languageVersion": "2.6"
     },
     {
       "name": "boolean_selector",
@@ -122,24 +116,6 @@
       "languageVersion": "2.0"
     },
     {
-      "name": "cloud_firestore",
-      "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.13.7",
-      "packageUri": "lib/",
-      "languageVersion": "2.0"
-    },
-    {
-      "name": "cloud_firestore_platform_interface",
-      "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore_platform_interface-1.1.2",
-      "packageUri": "lib/",
-      "languageVersion": "2.0"
-    },
-    {
-      "name": "cloud_firestore_web",
-      "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore_web-0.1.1+2",
-      "packageUri": "lib/",
-      "languageVersion": "2.1"
-    },
-    {
       "name": "code_builder",
       "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/code_builder-3.4.0",
       "packageUri": "lib/",
@@ -180,6 +156,12 @@
       "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/dart_style-1.3.6",
       "packageUri": "lib/",
       "languageVersion": "2.7"
+    },
+    {
+      "name": "dartz",
+      "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/dartz-0.9.2",
+      "packageUri": "lib/",
+      "languageVersion": "1.24"
     },
     {
       "name": "fake_async",
@@ -236,10 +218,22 @@
       "languageVersion": "2.1"
     },
     {
+      "name": "flushbar",
+      "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flushbar-1.10.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///E:/flutter/flutter/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "2.9"
+    },
+    {
+      "name": "flutter_bloc",
+      "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_bloc-4.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
     },
     {
       "name": "flutter_icons",
@@ -272,8 +266,26 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "freezed",
+      "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/freezed-0.10.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
+      "name": "freezed_annotation",
+      "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/freezed_annotation-0.7.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
       "name": "geolocator",
       "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/geolocator-5.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "get_it",
+      "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/get_it-4.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.1"
     },
@@ -344,6 +356,18 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "injectable",
+      "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/injectable-0.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.5"
+    },
+    {
+      "name": "injectable_generator",
+      "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/injectable_generator-0.3.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.5"
+    },
+    {
       "name": "io",
       "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/io-0.3.4",
       "packageUri": "lib/",
@@ -360,6 +384,12 @@
       "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/json_annotation-3.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.6"
+    },
+    {
+      "name": "lint",
+      "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/lint-1.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.9"
     },
     {
       "name": "location_permissions",
@@ -390,6 +420,12 @@
       "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/mime-0.9.7",
       "packageUri": "lib/",
       "languageVersion": "2.0"
+    },
+    {
+      "name": "nested",
+      "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/nested-0.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
     },
     {
       "name": "node_interop",
@@ -453,9 +489,9 @@
     },
     {
       "name": "provider",
-      "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/provider-3.2.0",
+      "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/provider-4.3.2+2",
       "packageUri": "lib/",
-      "languageVersion": "2.0"
+      "languageVersion": "2.7"
     },
     {
       "name": "pub_semver",
@@ -554,6 +590,12 @@
       "languageVersion": "2.4"
     },
     {
+      "name": "uuid",
+      "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/uuid-2.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
       "name": "vector_math",
       "rootUri": "file:///E:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.0.8",
       "packageUri": "lib/",
@@ -587,10 +629,10 @@
       "name": "help_me",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.1"
+      "languageVersion": "2.8"
     }
   ],
-  "generated": "2020-08-11T15:10:50.815856Z",
+  "generated": "2020-10-16T09:10:08.849837Z",
   "generator": "pub",
   "generatorVersion": "2.9.0"
 }
