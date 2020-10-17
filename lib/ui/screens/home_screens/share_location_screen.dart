@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:help_me/main.dart';
+import 'package:help_me/ui/shared/constants.dart';
 
 class ShareLocationScreen extends StatefulWidget {
   @override
@@ -9,7 +9,7 @@ class ShareLocationScreen extends StatefulWidget {
 class _ShareLocationScreenState extends State<ShareLocationScreen> {
   bool switchValue = false;
   Color cardColor = Color(0xFFDB4437);
-  String _switchText="Turn on";
+  String _switchText = "Turn on";
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class _ShareLocationScreenState extends State<ShareLocationScreen> {
             children: <Widget>[
               Text(
                 "Share your location",
-                style: Theme.of(context).textTheme.headline,
+                style: Theme.of(context).textTheme.headline5,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 32.0),
@@ -34,7 +34,8 @@ class _ShareLocationScreenState extends State<ShareLocationScreen> {
               Card(
                 color: cardColor,
                 child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 12.0),
+                  padding:
+                      EdgeInsets.symmetric(vertical: 16.0, horizontal: 12.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -51,18 +52,18 @@ class _ShareLocationScreenState extends State<ShareLocationScreen> {
                           setState(() {
                             switchValue = newSwitchValue;
                             if (switchValue) {
-                              cardColor = baseColor;
-                              _switchText="Turn off";
+                              cardColor = kGreenColor;
+                              _switchText = "Turn off";
                             } else {
                               cardColor = Color(0xFFDB4437);
-                              _switchText="Turn on";
+                              _switchText = "Turn on";
                             }
                           });
                         },
                         activeColor: Color(0xFFDB4437),
                         activeTrackColor: Colors.white,
                         inactiveTrackColor: Colors.white,
-                        inactiveThumbColor: baseColor,
+                        inactiveThumbColor: kGreenColor,
                       )
                     ],
                   ),
@@ -90,7 +91,7 @@ class _ShareLocationScreenState extends State<ShareLocationScreen> {
                         alignment: Alignment.center,
                         child: Text(
                           "- - - - - -",
-                          style: Theme.of(context).textTheme.title,
+                          style: Theme.of(context).textTheme.headline6,
                         ),
                       ),
                       Align(
@@ -101,7 +102,7 @@ class _ShareLocationScreenState extends State<ShareLocationScreen> {
                             "Share",
                             style: Theme.of(context)
                                 .textTheme
-                                .headline
+                                .headline5
                                 .copyWith(fontSize: 20),
                           ),
                         ),
@@ -134,7 +135,7 @@ class _ShareLocationScreenState extends State<ShareLocationScreen> {
                           alignment: Alignment.centerLeft,
                           child: Text(
                             "8 People shared with you",
-                            style: Theme.of(context).textTheme.body2,
+                            style: Theme.of(context).textTheme.bodyText2,
                           ),
                         ),
                       ),
@@ -146,7 +147,7 @@ class _ShareLocationScreenState extends State<ShareLocationScreen> {
                             "Proceed",
                             style: Theme.of(context)
                                 .textTheme
-                                .headline
+                                .headline5
                                 .copyWith(fontSize: 20),
                           ),
                         ),

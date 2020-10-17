@@ -11,8 +11,17 @@ dependencies:
   cupertino_icons: ^0.1.2
   google_maps_flutter: ^0.5.21+8
   geolocator: ^5.1.5
-  provider: ^3.0.0
-  http: ^0.12.0+2
+  provider: ^4.3.1
+  http: ^0.12.1
+  firebase_auth: ^0.16.1
+  cloud_firestore: ^0.13.7
+  flutter_spinkit: "^4.1.2"
+  flutter_icons: ^1.1.0
+  google_sign_in: ^4.5.1
+  flutter_svg: ^0.18.0
+  equatable: ^1.2.5
+  flutter_bloc: ^6.0.5
+  bloc: ^6.0.3
 
 dev_dependencies:
   flutter_test:
@@ -26,8 +35,12 @@ flutter:
           weight: 600
         - asset: assets/fonts/ProductSansRegular.ttf
           weight: 400
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat-Bold.ttf
+          weight: 700
 
   assets:
-    - assets/images/loginimage.png
-    - assets/images/location.png
+    - assets/images/
   uses-material-design: true
+

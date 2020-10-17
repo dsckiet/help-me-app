@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:help_me/main.dart';
+import 'package:help_me/services/firebase_auth.dart';
+import 'package:help_me/ui/screens/authentication/intro_screen.dart';
+import 'package:help_me/ui/shared/constants.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override
@@ -7,25 +9,26 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  final _auth = AuthService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.only(top: 40.0,left: 20.0,right: 20.0),
+        padding: EdgeInsets.only(top: 40.0, left: 20.0, right: 20.0),
         child: Column(
           children: <Widget>[
             Text(
               "Profile",
-              style: Theme.of(context).textTheme.headline,
+              style: Theme.of(context).textTheme.headline5,
             ),
             Container(
               padding: EdgeInsets.symmetric(vertical: 32.0),
               child: CircleAvatar(
-                backgroundColor: baseColor,
+                backgroundColor: kGreenColor,
                 radius: 40.0,
                 child: Text(
                   'S',
-                  style: TextStyle(fontSize: 40.0,color: Colors.white),
+                  style: TextStyle(fontSize: 40.0, color: Colors.white),
                 ),
               ),
             ),
@@ -61,8 +64,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               child: SizedBox(
                 width: double.infinity,
                 child: RaisedButton(
-                  padding:
-                  EdgeInsets.symmetric(vertical: 8, horizontal: 48),
+                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 48),
                   child: Text(
                     "Log out",
                     style: TextStyle(
@@ -70,10 +72,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  color: baseColor,
+                  color: kGreenColor,
                   shape: RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(8.0)),
-                  onPressed: () => {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return IntroScreen();
+                    }));
+                  },
                 ),
               ),
             )

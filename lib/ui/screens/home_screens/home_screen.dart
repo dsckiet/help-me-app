@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:help_me/core/google_current_loc.dart';
-import 'package:help_me/main.dart';
-import 'package:help_me/ui/screens/first_aid_screen.dart';
-import 'package:help_me/ui/screens/nearby_hcc.dart';
-import 'package:help_me/ui/screens/precaution_screen.dart';
-import 'package:help_me/ui/screens/profile_screen.dart';
-import 'package:help_me/ui/screens/share_location_screen.dart';
+import 'package:help_me/ui/screens/first_aid/first_aid_screen.dart';
+import 'package:help_me/ui/screens/precautions/precaution_screen.dart';
+import 'package:help_me/ui/shared/constants.dart';
+import 'nearby_hcc.dart';
+import 'profile_screen.dart';
+import 'share_location_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -44,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     bottomRight: Radius.circular(8.0),
                   ),
                   child: Container(
-                    color: baseColor,
+                    color: kGreenColor,
                     padding: EdgeInsets.all(8),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
@@ -52,12 +52,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget>[
                         InkWell(
-                          onTap: () {
+                          onTap: () async {
+                            //navigate to first aid screen
                             Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => FirstAidScreen()),
-                            );
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => FirstAidScreen(),
+                                ));
                           },
                           child: FittedBox(
                             fit: BoxFit.fitHeight,
@@ -81,12 +82,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                         InkWell(
-                          onTap: () {
+                          onTap: () async {
+                            //navigate to precautions screen
                             Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => PrecautionScreen()),
-                            );
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => PrecautionScreen(),
+                                ));
                           },
                           child: FittedBox(
                             fit: BoxFit.fitHeight,
