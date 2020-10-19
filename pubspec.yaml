@@ -39,6 +39,9 @@ flutter:
       fonts:
         - asset: assets/fonts/Montserrat-Bold.ttf
           weight: 700
+    - family: Sen
+      fonts:
+        - asset: assets/fonts/Sen-Regular.ttf
 
   assets:
     - assets/images/
