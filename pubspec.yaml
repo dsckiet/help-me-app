@@ -39,16 +39,6 @@ dev_dependencies:
 
 flutter:
   fonts:
-    - family: Product Sans
-      fonts:
-        - asset: assets/fonts/ProductSansBlack.ttf
-          weight: 600
-        - asset: assets/fonts/ProductSansRegular.ttf
-          weight: 400
-    - family: Montserrat
-      fonts:
-        - asset: assets/fonts/Montserrat-Bold.ttf
-          weight: 700
     - family: Sen
       fonts:
         - asset: assets/fonts/Sen-Regular.ttf
