@@ -1,5 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:help_me/ui/screens/authentication/register_form_screen.dart';
 import 'package:help_me/ui/shared/base_auth_page.dart';
 import 'package:help_me/ui/shared/constants.dart';
 
@@ -47,7 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
             height: size.height / 30,
           ),
           //register button
-          buildRegisterButton(size, context),
+          buildRegisterTextButton(context),
           SizedBox(
             height: size.height / 15,
           ),
@@ -56,26 +58,31 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  GestureDetector buildRegisterButton(Size size, BuildContext context) {
-    return GestureDetector(
-      onTap: () {},
-      child: Container(
-        height: size.height / 16,
-        alignment: Alignment.center,
-        width: size.width,
-        decoration: BoxDecoration(
-          color: kRedColor,
-          borderRadius: BorderRadius.circular(size.height / 90),
-        ),
-        child: Text(
-          'Register',
-          style: Theme.of(context)
-              .textTheme
-              .bodyText2
-              .copyWith(fontSize: size.height / 40, color: Color(0xFFFFFFFF)),
-        ),
-      ),
-    );
+  Align buildRegisterTextButton(BuildContext context) {
+    return Align(
+        alignment: Alignment.centerRight,
+        child: Text.rich(
+          TextSpan(
+              text: 'Dont have an account? ',
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyText1
+                  .copyWith(fontWeight: FontWeight.normal),
+              children: [
+                TextSpan(
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => RegisterScreen(),
+                            ));
+                      },
+                    text: 'Register',
+                    style: Theme.of(context).textTheme.bodyText1.copyWith(
+                        color: kRedColor, fontWeight: FontWeight.bold))
+              ]),
+        ));
   }
 
   GestureDetector buildLoginButton(Size size, BuildContext context) {
@@ -104,52 +111,46 @@ class _LoginScreenState extends State<LoginScreen> {
     return Form(
       child: Column(
         children: [
-          Theme(
-            data: Theme.of(context).copyWith(
-                primaryColor: Color(
-                    0xFF707070)), // To prevent the Icons from Changing Colors once Tapped
-            child: TextFormField(
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black, width: 2)),
-                border: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black, width: 1)),
-                labelText: 'Enter email',
-                labelStyle: TextStyle(
-                  color: Colors.black,
-                ),
-                icon: SvgPicture.asset(
-                  'assets/icons/@.svg',
-                  height: 15,
-                  width: 15,
-                  color: Colors.black,
-                ),
+          //email field
+          TextFormField(
+            keyboardType: TextInputType.emailAddress,
+            decoration: InputDecoration(
+              focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.black, width: 2)),
+              border: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.black, width: 1)),
+              labelText: 'Enter email',
+              labelStyle: TextStyle(
+                color: Colors.black,
+              ),
+              icon: SvgPicture.asset(
+                'assets/icons/@.svg',
+                height: 15,
+                width: 15,
+                color: Colors.black,
               ),
             ),
           ),
           SizedBox(
             height: size.height / 40,
           ),
-          Theme(
-            data: Theme.of(context).copyWith(primaryColor: Color(0xFF707070)),
-            child: TextFormField(
-              decoration: InputDecoration(
-                  icon: SvgPicture.asset(
-                    'assets/icons/lock.svg',
-                    height: 15,
-                    width: 15,
-                    color: Colors.black,
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black, width: 2)),
-                  border: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black, width: 1)),
-                  labelText: 'Enter Password',
-                  labelStyle: TextStyle(
-                    color: Colors.black,
-                  )),
-            ),
+          //password field
+          TextFormField(
+            decoration: InputDecoration(
+                icon: SvgPicture.asset(
+                  'assets/icons/lock.svg',
+                  height: 15,
+                  width: 15,
+                  color: Colors.black,
+                ),
+                focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black, width: 2)),
+                border: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black, width: 1)),
+                labelText: 'Enter Password',
+                labelStyle: TextStyle(
+                  color: Colors.black,
+                )),
           ),
         ],
       ),
