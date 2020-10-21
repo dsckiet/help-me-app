@@ -8,6 +8,7 @@ class BaseAuthPage extends StatelessWidget {
   BaseAuthPage({this.child});
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
           backgroundColor: kGreyColor,
@@ -23,49 +24,54 @@ class BaseAuthPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12)),
                   child: child,
                 ),
-                SizedBox(
-                  child: Center(
-                    child: RichText(
-                      text: TextSpan(
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: ' By signing in, You agree to Helpme\'s\n ',
-                            style: TextStyle(
-                                fontSize: 11,
-                                color: Colors.black,
-                                fontWeight: FontWeight.w300),
-                          ),
-                          TextSpan(
-                              text: "\t\t\t\t\tPrivacy Policy",
-                              recognizer: TapGestureRecognizer()
-                                ..onTap = () {}, //TODO : Link to Privacy Policy
-                              style: TextStyle(
-                                  fontSize: 11,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500)),
-                          TextSpan(
-                              text: " & ",
-                              style: TextStyle(
-                                  fontSize: 11,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w300)),
-                          TextSpan(
-                              text: "Terms of Use",
-                              recognizer: TapGestureRecognizer()
-                                ..onTap = () {}, //TODO : Link to Terms of Use
-                              style: TextStyle(
-                                  fontSize: 11,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w600)),
-                        ],
-                      ),
-                    ),
-                  ),
-                  height: 70,
-                ),
+                //text area for term of use and privacy policy
+                buildPolicyPlaceHolder(size),
               ],
             ),
           )),
+    );
+  }
+
+  SizedBox buildPolicyPlaceHolder(Size size) {
+    return SizedBox(
+      child: Center(
+        child: RichText(
+          text: TextSpan(
+            children: <TextSpan>[
+              TextSpan(
+                text: ' By signing in, You agree to Helpme\'s\n ',
+                style: TextStyle(
+                    fontSize: 11,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w300),
+              ),
+              TextSpan(
+                  text: "\t\t\t\t\tPrivacy Policy",
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {}, //TODO : Link to Privacy Policy
+                  style: TextStyle(
+                      fontSize: 11,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500)),
+              TextSpan(
+                  text: " & ",
+                  style: TextStyle(
+                      fontSize: 11,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w300)),
+              TextSpan(
+                  text: "Terms of Use",
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {}, //TODO : Link to Terms of Use
+                  style: TextStyle(
+                      fontSize: 11,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600)),
+            ],
+          ),
+        ),
+      ),
+      height: size.height / 10,
     );
   }
 }
