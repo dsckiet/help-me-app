@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:help_me/ui/screens/authentication/sign_in_mobile.dart';
+import 'package:help_me/ui/screens/authentication/login_form_screen.dart';
 import 'package:help_me/ui/shared/base_auth_page.dart';
 import 'package:help_me/ui/shared/constants.dart';
 import 'package:help_me/ui/shared/long_button.dart';
@@ -69,7 +69,7 @@ class _IntroScreenState extends State<IntroScreen> {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return SignInMobile();
+              return LoginScreen();
             },
           ),
         );
