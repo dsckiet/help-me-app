@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:help_me/ui/shared/base_auth_page.dart';
@@ -14,39 +13,19 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return BaseAuthPage(
+      enableTopPadding: false,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          SizedBox(
-            height: size.height / 20,
-          ),
-          Container(
-            alignment: Alignment.centerLeft,
-            child: kGetAppIcon(size: size.height / 7),
-          ),
-          SizedBox(
-            height: size.height / 30,
-          ),
-          Text(
-            'Hey, There!\nWelcome to Helpme',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 22,
-            ),
-          ),
-          SizedBox(
-            height: size.height / 50,
-          ),
           //login form
           buildLoginForm(size, context),
           SizedBox(
-            height: size.height / 20,
+            height: size.height / 30,
           ),
-
           //register button
           buildRegisterButton(size, context),
           SizedBox(
-            height: size.height / 15,
+            height: size.height / 40,
           ),
         ],
       ),

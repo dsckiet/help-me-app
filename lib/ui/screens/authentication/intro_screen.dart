@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:help_me/ui/screens/authentication/login_form_screen.dart';
 import 'package:help_me/ui/shared/base_auth_page.dart';
 import 'package:help_me/ui/shared/constants.dart';
-import 'package:help_me/ui/shared/long_button.dart';
 
 class IntroScreen extends StatefulWidget {
   @override
@@ -14,28 +12,12 @@ class _IntroScreenState extends State<IntroScreen> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return BaseAuthPage(
+      enableTopPadding: true,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           SizedBox(
-            height: size.height / 7,
-          ),
-          Container(
-            alignment: Alignment.centerLeft,
-            child: kGetAppIcon(size: size.height / 7),
-          ),
-          SizedBox(
-            height: size.height / 30,
-          ),
-          Text(
-            'Hey, There!\nWelcome to Helpme',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 22,
-            ),
-          ),
-          SizedBox(
-            height: size.height / 15,
+            height: size.height / 11,
           ),
           Text(
             'Continue With ',
@@ -45,55 +27,62 @@ class _IntroScreenState extends State<IntroScreen> {
                 fontWeight: FontWeight.normal),
           ),
           SizedBox(
-            height: size.height / 60,
+            height: size.height / 40,
           ),
           buildSignInWithGoogleButton(size),
           SizedBox(
             height: size.height / 30,
           ),
-          buildLogInOrRegisterButton(context),
+          buildLogInOrRegisterButton(size),
           SizedBox(
-            height: size.height / 5,
+            height: size.height / 8,
           ),
         ],
       ),
     );
   }
 
-  LongButton buildLogInOrRegisterButton(BuildContext context) {
-    return LongButton(
-      color: kBlueColor,
-      title: 'Login Or Register',
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) {
-              return LoginScreen();
-            },
-          ),
-        );
-      },
+  GestureDetector buildLogInOrRegisterButton(Size size) {
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+        height: size.height / 16,
+        alignment: Alignment.center,
+        width: size.width,
+        decoration: BoxDecoration(
+          color: kBlueColor,
+          borderRadius: BorderRadius.circular(size.height / 90),
+        ),
+        child: Text(
+          'LogIn or Register',
+          style: Theme.of(context)
+              .textTheme
+              .bodyText2
+              .copyWith(fontSize: size.height / 40, color: Color(0xFFFFFFFF)),
+        ),
+      ),
     );
   }
 
-  LongButton buildSignInWithGoogleButton(Size size) {
-    return LongButton(
-      color: kRedColor,
-      title: 'Google',
-      onPressed: () {
-        print(size.width);
-        print(size.height);
-        // TODO : ADD GOOGLE LOGIN
-        // Navigator.pushReplacement(
-        //   context,
-        //   MaterialPageRoute(
-        //     builder: (context) {
-        //       return HomeScreen();
-        //     },
-        //   ),
-        // );
-      },
+  GestureDetector buildSignInWithGoogleButton(Size size) {
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+        height: size.height / 16,
+        alignment: Alignment.center,
+        width: size.width,
+        decoration: BoxDecoration(
+          color: kRedColor,
+          borderRadius: BorderRadius.circular(size.height / 90),
+        ),
+        child: Text(
+          'SignIn with Google',
+          style: Theme.of(context)
+              .textTheme
+              .bodyText2
+              .copyWith(fontSize: size.height / 40, color: Color(0xFFFFFFFF)),
+        ),
+      ),
     );
   }
 }

@@ -15,29 +15,10 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return BaseAuthPage(
+      enableTopPadding: true,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          SizedBox(
-            height: size.height / 12,
-          ),
-          Container(
-            alignment: Alignment.centerLeft,
-            child: kGetAppIcon(size: size.height / 7),
-          ),
-          SizedBox(
-            height: size.height / 30,
-          ),
-          Text(
-            'Hey, There!\nWelcome to Helpme',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 22,
-            ),
-          ),
-          SizedBox(
-            height: size.height / 20,
-          ),
           //login form
           buildLoginForm(size, context),
           SizedBox(

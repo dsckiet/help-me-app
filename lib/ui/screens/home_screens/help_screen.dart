@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:help_me/ui/shared/constants.dart';
-import 'home_screen.dart';
 
 class HelpScreen extends StatefulWidget {
   @override
