@@ -13,9 +13,7 @@ dependencies:
   geolocator: ^5.1.5
   provider: ^4.3.1
   http: ^0.12.1
-  flutter_spinkit: "^4.1.2"
-  flutter_icons: ^1.1.0
-  flutter_svg: ^0.17.4
+  flutter_svg: ^0.18.0
   freezed_annotation: ^0.7.1
   flutter_bloc: ^4.0.0
   firebase_core: ^0.4.4+3
@@ -39,18 +37,12 @@ dev_dependencies:
 
 flutter:
   fonts:
-    - family: Product Sans
+    - family: Sen
       fonts:
-        - asset: assets/fonts/ProductSansBlack.ttf
-          weight: 600
-        - asset: assets/fonts/ProductSansRegular.ttf
-          weight: 400
-    - family: Montserrat
-      fonts:
-        - asset: assets/fonts/Montserrat-Bold.ttf
-          weight: 700
+        - asset: assets/fonts/Sen-Regular.ttf
 
   assets:
     - assets/images/
+    - assets/icons/
   uses-material-design: true
 

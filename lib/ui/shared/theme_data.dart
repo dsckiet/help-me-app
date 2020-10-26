@@ -5,7 +5,7 @@ ThemeData kThemeData = ThemeData(
   brightness: Brightness.light,
   buttonTheme: ButtonThemeData(
       buttonColor: kRedColor, textTheme: ButtonTextTheme.primary),
-  fontFamily: 'MontSerrat',
+  fontFamily: 'Sen',
   textTheme: TextTheme(
     headline5:
         TextStyle(fontSize: 32, color: kBlueColor, fontWeight: FontWeight.w600),
@@ -16,19 +16,16 @@ ThemeData kThemeData = ThemeData(
     bodyText1:
         TextStyle(fontSize: 16, color: kFontColor, fontWeight: FontWeight.w600),
   ),
-
   inputDecorationTheme: InputDecorationTheme(
-                  isDense: true,
-                  
-                  contentPadding:
-                      EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  hintStyle: TextStyle(fontWeight: FontWeight.bold),
-                  filled: true,
-                  fillColor: Colors.white,
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black, width: 1),
-                  ),
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black, width: 1),
-                  )),
+      isDense: true,
+      contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      hintStyle: TextStyle(fontWeight: FontWeight.bold),
+      filled: true,
+      fillColor: Colors.white,
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: Colors.black, width: 1),
+      ),
+      border: OutlineInputBorder(
+        borderSide: BorderSide(color: Colors.black, width: 1),
+      )),
 );

@@ -1,48 +1,55 @@
 import 'package:flutter/material.dart';
-import 'package:help_me/Models/First_Aid_Content_Model.dart';
-import 'package:provider/provider.dart';
+import 'package:help_me/ui/shared/constants.dart';
 
 //display the appropriate data after clicking on cards on the first aid screen
 class FirstAidContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final content = Provider.of<FirstAidContentModel>(context);
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        leading: Container(
-          height: 0,
-          width: 0,
-        ),
-        backgroundColor: Colors.white,
-        title: Text(
-          content.data['woundType'],
-          style: Theme.of(context).textTheme.headline5.copyWith(fontSize: 22),
-        ),
-        centerTitle: true,
-        elevation: 2,
+      appBar: buildAppBar(context),
+      body: buildFirstAidContentBody(size),
+    );
+  }
+
+  Container buildFirstAidContentBody(Size size) {
+    return Container(
+      padding: EdgeInsets.only(top: 20.0),
+      alignment: Alignment.center,
+      child: Column(
+        children: <Widget>[
+          Expanded(
+            child: ListView(
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.only(
+                      left: size.width / 14,
+                      right: size.width / 14,
+                      bottom: size.height / 34),
+                  child: Text(
+                      'oasiocadu cwuibebfow ewndoiewo wiubcboaidc dosbowi woefuwoufbiw c kwkuebodd owefeowbfhd fiuwouwebwefb fwbfuowf dwhkfbowubfwbkw wobwibwkf fowebw fkw ui wk wi wkw cbouwbckwdbcoiwe'),
+                ),
+              ],
+            ),
+          )
+        ],
       ),
-      body: Container(
-        padding: EdgeInsets.only(top: 20.0),
-        alignment: Alignment.center,
-        child: Column(
-          children: <Widget>[
-            Expanded(
-              child: ListView(
-                children: <Widget>[
-                  Padding(
-                    padding: EdgeInsets.only(
-                        left: size.width * 0.08,
-                        right: size.width * 0.08,
-                        bottom: 20),
-                    child: Text(content.data['treatment'][0]),
-                  ),
-                ],
-              ),
-            )
-          ],
-        ),
+    );
+  }
+
+  AppBar buildAppBar(BuildContext context) {
+    return AppBar(
+      leading: Icon(
+        Icons.arrow_back_ios,
+        color: kBlueColor,
       ),
+      backgroundColor: Colors.white,
+      title: Text(
+        'Ayush Sharma',
+        style: Theme.of(context).textTheme.headline5.copyWith(fontSize: 22),
+      ),
+      centerTitle: true,
+      elevation: 2,
     );
   }
 }
