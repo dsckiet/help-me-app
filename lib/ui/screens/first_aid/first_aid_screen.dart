@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'First_Aid_Content_Card.dart';
+import 'package:help_me/ui/screens/widgets/first_aid_content_card.dart';
 
 class FirstAidScreen extends StatefulWidget {
   @override
