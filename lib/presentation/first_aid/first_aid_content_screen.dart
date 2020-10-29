@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:help_me/ui/shared/constants.dart';
+import 'package:help_me/presentation/core/constants.dart';
 
 //display the appropriate data after clicking on cards on the first aid screen
 class FirstAidContent extends StatelessWidget {

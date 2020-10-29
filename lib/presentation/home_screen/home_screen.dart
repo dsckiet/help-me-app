@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:help_me/core/google_current_loc.dart';
-import 'package:help_me/ui/screens/widgets/home_screen_buttons.dart';
-import 'package:help_me/ui/shared/constants.dart';
-import 'nearby_hcc.dart';
+import 'package:help_me/presentation/home_screen/widgets/home_screen_buttons.dart';
+import 'package:help_me/presentation/core/constants.dart';
+import '../nearby_healthcare_centres/nearby_hcc.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
