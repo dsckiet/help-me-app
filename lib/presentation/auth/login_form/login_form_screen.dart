@@ -1,9 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:help_me/ui/screens/authentication/register_form_screen.dart';
-import 'package:help_me/ui/shared/base_auth_page.dart';
-import 'package:help_me/ui/shared/constants.dart';
+import 'package:help_me/presentation/auth/register_form/register_form_screen.dart';
+import 'package:help_me/presentation/core/base_auth_page.dart';
+import 'package:help_me/presentation/core/constants.dart';
 
 class LoginScreen extends StatefulWidget {
   @override

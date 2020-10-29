@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:help_me/ui/shared/constants.dart';
+import 'package:help_me/presentation/core/constants.dart';
 
 ThemeData kThemeData = ThemeData(
   brightness: Brightness.light,

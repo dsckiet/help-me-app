@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:help_me/ui/screens/authentication/intro_screen.dart';
-import 'package:help_me/ui/shared/constants.dart';
+import 'package:help_me/presentation/auth/google_sign_in_page/intro_screen.dart';
+import 'package:help_me/presentation/core/constants.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override

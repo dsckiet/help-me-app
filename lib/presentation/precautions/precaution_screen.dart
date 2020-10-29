@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:help_me/ui/screens/widgets/precaution_content_card.dart';
+import 'package:help_me/presentation/precautions/widgets/precaution_content_card.dart';
 
 class PrecautionScreen extends StatefulWidget {
   @override

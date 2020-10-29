@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:help_me/ui/screens/widgets/first_aid_content_card.dart';
+
+import 'widgets/first_aid_content_card.dart';
 
 class FirstAidScreen extends StatefulWidget {
   @override
@@ -29,16 +30,16 @@ class _FirstAidScreenState extends State<FirstAidScreen> {
             padding: EdgeInsets.only(top: 16),
           ),
           //list of first aid topic cards
-          // Expanded(
-          //   child: ListView.builder(
-          //     itemBuilder: (context, int i) {
-          //       return FirstAidContentCard(
-          //         title: 'Ayush sharma',
-          //       );
-          //     },
-          //     itemCount: 5,
-          //   ),
-          // )
+          Expanded(
+            child: ListView.builder(
+              itemBuilder: (context, int i) {
+                return FirstAidContentCard(
+                  title: 'Ayush sharma',
+                );
+              },
+              itemCount: 5,
+            ),
+          )
         ],
       ),
     );
