@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:help_me/domain/precautions/precautions.dart';
 
 class PrecautionsContentCard extends StatelessWidget {
-  final String title;
+  final Precaution precaution;
 
   //final Map map;
   PrecautionsContentCard({
-    this.title,
+    this.precaution,
   });
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class PrecautionsContentCard extends StatelessWidget {
         child: ListTile(
           isThreeLine: false,
           title: Text(
-            title,
+            precaution.title,
             style: Theme.of(context).textTheme.bodyText1,
           ),
           trailing: Icon(Icons.arrow_forward_ios),

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:help_me/application/precaution/precaution_bloc.dart';
+import 'package:help_me/injection.dart';
 import 'package:help_me/presentation/precautions/widgets/precaution_content_card.dart';
 
 class PrecautionScreen extends StatefulWidget {
@@ -10,8 +13,12 @@ class _PrecautionScreenState extends State<PrecautionScreen> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: buildPrecautionScreenBody(size, context),
+    return BlocProvider(
+      create: (context) =>
+          getIt<PrecautionBloc>()..add(PrecautionEvent.loadPrecautions()),
+      child: Scaffold(
+        body: buildPrecautionScreenBody(size, context),
+      ),
     );
   }
 
@@ -29,12 +36,14 @@ class _PrecautionScreenState extends State<PrecautionScreen> {
             padding: EdgeInsets.only(top: size.height / 40),
           ),
           //list of first aid topic cards
+          BlocConsumer(
+            builder: (context, state) {},
+            listener: (context, state) {},
+          ),
           Expanded(
             child: ListView.builder(
               itemBuilder: (context, int i) {
-                return PrecautionsContentCard(
-                  title: 'ayush sharma',
-                );
+                return PrecautionsContentCard();
               },
               itemCount: 5,
             ),
