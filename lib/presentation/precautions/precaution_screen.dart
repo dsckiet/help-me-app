@@ -13,7 +13,7 @@ class _PrecautionScreenState extends State<PrecautionScreen> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return BlocProvider(
+    return BlocProvider<PrecautionBloc>(
       create: (context) =>
           getIt<PrecautionBloc>()..add(PrecautionEvent.loadPrecautions()),
       child: Scaffold(
@@ -36,18 +36,19 @@ class _PrecautionScreenState extends State<PrecautionScreen> {
             padding: EdgeInsets.only(top: size.height / 40),
           ),
           //list of first aid topic cards
-          BlocConsumer(
-            builder: (context, state) {},
-            listener: (context, state) {},
-          ),
-          Expanded(
-            child: ListView.builder(
-              itemBuilder: (context, int i) {
-                return PrecautionsContentCard();
-              },
-              itemCount: 5,
-            ),
-          )
+          // BlocConsumer(
+          //   builder: (context, state) {
+
+          //   },
+          //   listener: (context, state) {},
+          // ),
+          // Expanded(
+          //   child: ListView.builder(
+          //     itemBuilder: (context, int i) {
+          //       return PrecautionsContentCard();
+          //     },
+          //     itemCount: 5,
+          //   ),
         ],
       ),
     );

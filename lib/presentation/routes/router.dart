@@ -1,7 +1,4 @@
 import 'package:auto_route/auto_route_annotations.dart';
-import 'package:help_me/pages/initial_page.dart';
-import 'package:help_me/pages/second_page.dart';
-import 'package:help_me/pages/third_page.dart';
 import 'package:help_me/presentation/auth/google_sign_in_page/intro_screen.dart';
 import 'package:help_me/presentation/auth/login_form/login_form_screen.dart';
 import 'package:help_me/presentation/auth/register_form/register_form_screen.dart';
