@@ -10,6 +10,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
+import '../../domain/precautions/precautions.dart';
 import '../auth/google_sign_in_page/intro_screen.dart';
 import '../auth/login_form/login_form_screen.dart';
 import '../auth/register_form/register_form_screen.dart';
@@ -130,8 +131,14 @@ class Router extends RouterBase {
       );
     },
     PrecautionsContent: (data) {
+      final args = data.getArgs<PrecautionsContentArguments>(
+        orElse: () => PrecautionsContentArguments(),
+      );
       return MaterialPageRoute<dynamic>(
-        builder: (context) => PrecautionsContent(),
+        builder: (context) => PrecautionsContent(
+          key: args.key,
+          precaution: args.precaution,
+        ),
         settings: data,
       );
     },
@@ -158,4 +165,11 @@ class Router extends RouterBase {
 class NearbyHccArguments {
   final Position currentPos;
   NearbyHccArguments({this.currentPos});
+}
+
+/// PrecautionsContent arguments holder class
+class PrecautionsContentArguments {
+  final Key key;
+  final Precaution precaution;
+  PrecautionsContentArguments({this.key, this.precaution});
 }
