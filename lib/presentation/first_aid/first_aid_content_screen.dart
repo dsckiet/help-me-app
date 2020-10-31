@@ -1,8 +1,14 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:help_me/domain/first_aid/first_aid.dart';
 import 'package:help_me/presentation/core/constants.dart';
+import 'package:help_me/presentation/precautions/widgets/precaution_tips_listview_widget.dart';
 
 //display the appropriate data after clicking on cards on the first aid screen
 class FirstAidContent extends StatelessWidget {
+  final FirstAid firstAid;
+
+  const FirstAidContent({Key key, this.firstAid}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -12,41 +18,31 @@ class FirstAidContent extends StatelessWidget {
     );
   }
 
-  Container buildFirstAidContentBody(Size size) {
-    return Container(
-      padding: EdgeInsets.only(top: 20.0),
-      alignment: Alignment.center,
-      child: Column(
-        children: <Widget>[
-          Expanded(
-            child: ListView(
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(
-                      left: size.width / 14,
-                      right: size.width / 14,
-                      bottom: size.height / 34),
-                  child: Text(
-                      'oasiocadu cwuibebfow ewndoiewo wiubcboaidc dosbowi woefuwoufbiw c kwkuebodd owefeowbfhd fiuwouwebwefb fwbfuowf dwhkfbowubfwbkw wobwibwkf fowebw fkw ui wk wi wkw cbouwbckwdbcoiwe'),
-                ),
-              ],
-            ),
-          )
-        ],
-      ),
+  PrecautionTipsListViewWidget buildFirstAidContentBody(Size size) {
+    return PrecautionTipsListViewWidget(
+      title: 'Treatment',
+      tips: firstAid.treatment,
     );
   }
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      leading: Icon(
-        Icons.arrow_back_ios,
-        color: kBlueColor,
+      leading: GestureDetector(
+        onTap: () {
+          ExtendedNavigator.of(context).pop();
+        },
+        child: Icon(
+          Icons.arrow_back_ios,
+          color: Colors.white,
+        ),
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: kBlueColor,
       title: Text(
-        'Ayush Sharma',
-        style: Theme.of(context).textTheme.headline5.copyWith(fontSize: 22),
+        firstAid.woundType,
+        style: Theme.of(context)
+            .textTheme
+            .headline5
+            .copyWith(fontSize: 22, color: Colors.white),
       ),
       centerTitle: true,
       elevation: 2,

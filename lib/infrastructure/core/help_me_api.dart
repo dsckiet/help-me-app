@@ -13,4 +13,11 @@ class HelpMeApi {
         List.from(jsonDecode(response.body)['data']);
     return data;
   }
+
+  Future<List<Map<String, dynamic>>> getFirstAids() async {
+    final response = await get('$baseUrl/aid');
+    List<Map<String, dynamic>> data =
+        List.from(jsonDecode(response.body)['data']);
+    return data;
+  }
 }

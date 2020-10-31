@@ -21,9 +21,9 @@ import 'package:help_me/presentation/user_profile/profile_screen.dart';
   MaterialRoute(page: HelpScreen),
   MaterialRoute(page: ShareLocationScreen),
   MaterialRoute(page: NearbyHcc),
-  MaterialRoute(page: PrecautionScreen, initial: true),
+  MaterialRoute(page: PrecautionScreen),
   MaterialRoute(page: PrecautionsContent),
-  MaterialRoute(page: FirstAidScreen),
+  MaterialRoute(page: FirstAidScreen, initial: true),
   MaterialRoute(page: FirstAidContent),
 ])
 class $Router {}
