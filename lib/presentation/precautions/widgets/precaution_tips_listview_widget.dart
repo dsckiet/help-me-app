@@ -12,9 +12,10 @@ class PrecautionTipsListViewWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.all(size.height / 40),
       child: Card(
         elevation: 8,
         color: Color(0xfff1f1f1),
@@ -36,17 +37,19 @@ class PrecautionTipsListViewWidget extends StatelessWidget {
                 child: ListView.builder(
                   itemBuilder: (context, i) {
                     return Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: size.width / 21,
+                          vertical: size.height / 82),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            margin: EdgeInsets.only(right: 15),
-                            height: 30,
-                            width: 30,
+                            margin: EdgeInsets.only(right: size.width / 29),
+                            height: size.height / 27,
+                            width: size.height / 27,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
+                              borderRadius:
+                                  BorderRadius.circular(size.height / 27),
                               border: Border.all(
                                   color: Color(0xff4d4f53), width: 3),
                             ),
@@ -56,7 +59,9 @@ class PrecautionTipsListViewWidget extends StatelessWidget {
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyText2
-                                    .copyWith(color: Color(0xff4d4f53)),
+                                    .copyWith(
+                                      color: Color(0xff4d4f53),
+                                    ),
                               ),
                             ),
                           ),

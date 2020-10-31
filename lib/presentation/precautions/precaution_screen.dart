@@ -35,7 +35,7 @@ class _PrecautionScreenState extends State<PrecautionScreen> {
           Padding(
             padding: EdgeInsets.only(top: size.height / 40),
           ),
-          //list of first aid topic cards
+          //list of precaution topic cards
           PrecautionsListBody(),
         ],
       ),
