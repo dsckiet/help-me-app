@@ -13,7 +13,7 @@ import 'package:help_me/presentation/share_location/share_location_screen.dart';
 import 'package:help_me/presentation/user_profile/profile_screen.dart';
 
 @MaterialAutoRouter(routes: <AutoRoute>[
-  MaterialRoute(page: IntroScreen, initial: true),
+  MaterialRoute(page: IntroScreen),
   MaterialRoute(page: LoginScreen),
   MaterialRoute(page: RegisterScreen),
   MaterialRoute(page: HomeScreen),
@@ -21,7 +21,7 @@ import 'package:help_me/presentation/user_profile/profile_screen.dart';
   MaterialRoute(page: HelpScreen),
   MaterialRoute(page: ShareLocationScreen),
   MaterialRoute(page: NearbyHcc),
-  MaterialRoute(page: PrecautionScreen),
+  MaterialRoute(page: PrecautionScreen, initial: true),
   MaterialRoute(page: PrecautionsContent),
   MaterialRoute(page: FirstAidScreen),
   MaterialRoute(page: FirstAidContent),

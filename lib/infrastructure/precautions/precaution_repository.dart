@@ -27,6 +27,7 @@ class PrecautionRepository implements IPrecautionsRepository {
             .toImmutableList(),
       );
     } catch (e) {
+      print(e);
       return left(const PrecautionFailiure.unexpected());
     }
   }

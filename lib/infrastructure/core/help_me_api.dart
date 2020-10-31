@@ -9,6 +9,8 @@ const String baseUrl = 'https://help--me.herokuapp.com/api/v1';
 class HelpMeApi {
   Future<List<Map<String, dynamic>>> getPrecautions() async {
     final response = await get('$baseUrl/precautions');
-    return jsonDecode(response.body)['data'];
+    List<Map<String, dynamic>> data =
+        List.from(jsonDecode(response.body)['data']);
+    return data;
   }
 }

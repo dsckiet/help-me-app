@@ -24,7 +24,7 @@ import '../share_location/share_location_screen.dart';
 import '../user_profile/profile_screen.dart';
 
 class Routes {
-  static const String introScreen = '/';
+  static const String introScreen = '/intro-screen';
   static const String loginScreen = '/login-screen';
   static const String registerScreen = '/register-screen';
   static const String homeScreen = '/home-screen';
@@ -32,7 +32,7 @@ class Routes {
   static const String helpScreen = '/help-screen';
   static const String shareLocationScreen = '/share-location-screen';
   static const String nearbyHcc = '/nearby-hcc';
-  static const String precautionScreen = '/precaution-screen';
+  static const String precautionScreen = '/';
   static const String precautionsContent = '/precautions-content';
   static const String firstAidScreen = '/first-aid-screen';
   static const String firstAidContent = '/first-aid-content';
