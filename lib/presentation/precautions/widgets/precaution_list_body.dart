@@ -2,6 +2,8 @@ import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:help_me/application/precaution/precaution_bloc.dart';
+import 'package:help_me/presentation/core/display_error_widget.dart';
+import 'package:help_me/presentation/core/loading_indicator.dart';
 import 'package:help_me/presentation/precautions/widgets/precaution_content_card.dart';
 import 'package:lottie/lottie.dart';
 
@@ -17,7 +19,7 @@ class PrecautionsListBody extends StatelessWidget {
         return state.map(
           initial: (_) => Container(),
           //display a progress indicator while data is fetched or failiure occours
-          loadingProgress: (_) => buildLoadingProgressIndicator(),
+          loadingProgress: (_) => LoadingIndicator(),
           loadingSuccess: (state) {
             //display the list of precautions
             return Expanded(
@@ -32,7 +34,7 @@ class PrecautionsListBody extends StatelessWidget {
             );
           },
           //display an error animation if something goes wrong
-          loadingFailiure: (state) => buildErrorDisplayWidget(),
+          loadingFailiure: (state) => DisplayErrorWidget(),
         );
       },
       listener: (context, state) {
@@ -47,26 +49,6 @@ class PrecautionsListBody extends StatelessWidget {
           orElse: () {},
         );
       },
-    );
-  }
-
-  //error animation widget
-  Expanded buildErrorDisplayWidget() {
-    return Expanded(
-      child: Container(
-        child: Center(
-            child: Lottie.asset('assets/animations/error_animation.json')),
-      ),
-    );
-  }
-
-  //loading progress indicator
-  Expanded buildLoadingProgressIndicator() {
-    return Expanded(
-      child: Container(
-        child: Center(
-            child: Lottie.asset('assets/animations/loading_animation.json')),
-      ),
     );
   }
 }

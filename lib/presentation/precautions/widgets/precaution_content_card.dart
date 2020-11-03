@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:help_me/domain/precautions/precautions.dart';
+import 'package:help_me/presentation/routes/router.gr.dart';
 
 class PrecautionsContentCard extends StatelessWidget {
   final Precaution precaution;
@@ -24,7 +26,13 @@ class PrecautionsContentCard extends StatelessWidget {
             style: Theme.of(context).textTheme.bodyText1,
           ),
           trailing: Icon(Icons.arrow_forward_ios),
-          onTap: () {},
+          onTap: () {
+            ExtendedNavigator.of(context).push(
+              Routes.precautionsContent,
+              arguments:
+                  PrecautionsContentArguments(precaution: this.precaution),
+            );
+          },
         ),
       ),
     );

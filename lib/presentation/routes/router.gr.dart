@@ -10,6 +10,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
+import '../../domain/first_aid/first_aid.dart';
+import '../../domain/precautions/precautions.dart';
 import '../auth/google_sign_in_page/intro_screen.dart';
 import '../auth/login_form/login_form_screen.dart';
 import '../auth/register_form/register_form_screen.dart';
@@ -32,9 +34,9 @@ class Routes {
   static const String helpScreen = '/help-screen';
   static const String shareLocationScreen = '/share-location-screen';
   static const String nearbyHcc = '/nearby-hcc';
-  static const String precautionScreen = '/';
+  static const String precautionScreen = '/precaution-screen';
   static const String precautionsContent = '/precautions-content';
-  static const String firstAidScreen = '/first-aid-screen';
+  static const String firstAidScreen = '/';
   static const String firstAidContent = '/first-aid-content';
   static const all = <String>{
     introScreen,
@@ -130,8 +132,14 @@ class Router extends RouterBase {
       );
     },
     PrecautionsContent: (data) {
+      final args = data.getArgs<PrecautionsContentArguments>(
+        orElse: () => PrecautionsContentArguments(),
+      );
       return MaterialPageRoute<dynamic>(
-        builder: (context) => PrecautionsContent(),
+        builder: (context) => PrecautionsContent(
+          key: args.key,
+          precaution: args.precaution,
+        ),
         settings: data,
       );
     },
@@ -142,8 +150,14 @@ class Router extends RouterBase {
       );
     },
     FirstAidContent: (data) {
+      final args = data.getArgs<FirstAidContentArguments>(
+        orElse: () => FirstAidContentArguments(),
+      );
       return MaterialPageRoute<dynamic>(
-        builder: (context) => FirstAidContent(),
+        builder: (context) => FirstAidContent(
+          key: args.key,
+          firstAid: args.firstAid,
+        ),
         settings: data,
       );
     },
@@ -158,4 +172,18 @@ class Router extends RouterBase {
 class NearbyHccArguments {
   final Position currentPos;
   NearbyHccArguments({this.currentPos});
+}
+
+/// PrecautionsContent arguments holder class
+class PrecautionsContentArguments {
+  final Key key;
+  final Precaution precaution;
+  PrecautionsContentArguments({this.key, this.precaution});
+}
+
+/// FirstAidContent arguments holder class
+class FirstAidContentArguments {
+  final Key key;
+  final FirstAid firstAid;
+  FirstAidContentArguments({this.key, this.firstAid});
 }
